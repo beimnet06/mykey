@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Happy Birthday Mykey 💙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #d4e8ff 0%, #e0f0ff 40%, #cae3ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Soft cloud-like orbs */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -15%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(180, 220, 255, 0.5), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -20%;
+            right: -15%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(200, 230, 255, 0.45), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Main card - soft white with blue tint */
+        .card {
+            position: relative;
+            z-index: 10;
+            max-width: 680px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 48px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(150, 200, 255, 0.4);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Animated sections */
+        .section {
+            opacity: 0;
+            transform: translateY(25px);
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.05s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.35s; }
+        .section:nth-child(4) { animation-delay: 0.5s; }
+        .section:nth-child(5) { animation-delay: 0.65s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .icon-top {
+            text-align: center;
+            font-size: 3.8rem;
+            margin-bottom: 8px;
+            animation: softFloat 3s infinite ease-in-out;
+            display: inline-block;
+            width: 100%;
+        }
+
+        @keyframes softFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #3a86ff, #6ea8fe, #9ac2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #4a7ec7;
+            font-weight: 500;
+            background: #eef4ff;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 25px;
+            padding: 6px 20px;
+            border-radius: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Story blocks - light blue tint */
+        .story-block {
+            background: #f5faff;
+            padding: 16px 22px;
+            border-radius: 24px;
+            margin: 16px 0;
+            transition: all 0.3s ease;
+            border: 1px solid #d6e8ff;
+        }
+
+        .story-block:hover {
+            transform: translateX(6px) translateY(-2px);
+            background: #edf5ff;
+            border-color: #8bbdff;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+        }
+
+        .story-emoji {
+            font-size: 1.5rem;
+            margin-right: 14px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .story-text {
+            display: inline-block;
+            width: calc(100% - 55px);
+            vertical-align: middle;
+            font-size: 1rem;
+            color: #2c4e7a;
+            line-height: 1.55;
+        }
+
+        /* Love section */
+        .love-section {
+            background: linear-gradient(135deg, #f0f7ff, #f5faff);
+            border-radius: 32px;
+            padding: 20px;
+            margin: 25px 0 20px;
+            text-align: center;
+            border: 1px solid #d6e8ff;
+        }
+
+        .love-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3a86ff;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin: 15px 0;
+        }
+
+        .badge {
+            background: white;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #4a7ec7;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            border: 1px solid #cae0ff;
+            cursor: default;
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+            background: #6ea8fe;
+            color: white;
+            border-color: #6ea8fe;
+        }
+
+        /* Button */
+        .surprise-btn {
+            background: linear-gradient(135deg, #6ea8fe, #3a86ff);
+            border: none;
+            color: white;
+            font-size: 1.15rem;
+            padding: 15px 28px;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 14px rgba(58, 134, 255, 0.25);
+            margin: 15px 0 10px;
+            animation: gentlePulse 2.2s infinite;
+        }
+
+        @keyframes gentlePulse {
+            0% { transform: scale(1); box-shadow: 0 6px 14px rgba(58, 134, 255, 0.25); }
+            50% { transform: scale(1.01); box-shadow: 0 10px 22px rgba(58, 134, 255, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 6px 14px rgba(58, 134, 255, 0.25); }
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.01);
+            animation: none;
+            background: linear-gradient(135deg, #3a86ff, #2666cc);
+        }
+
+        /* Surprise message */
+        .surprise-message {
+            background: #eef4ff;
+            color: #2c4e7a;
+            margin-top: 20px;
+            padding: 24px;
+            border-radius: 32px;
+            text-align: center;
+            line-height: 1.7;
+            opacity: 0;
+            transform: scale(0.96);
+            transition: all 0.5s ease;
+            display: none;
+            border: 1px solid #c0dbff;
+            font-size: 0.98rem;
+        }
+
+        .surprise-message.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 35px;
+            text-align: center;
+            font-size: 0.72rem;
+            color: #8bb0d4;
+            border-top: 1px solid #e2edff;
+            padding-top: 22px;
+        }
+
+        /* Floating elements */
+        .floating {
+            position: fixed;
+            font-size: 1rem;
+            pointer-events: none;
+            z-index: 99;
+            animation: floatSlow 5s linear forwards;
+        }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(-20vh) rotate(15deg); opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 32px 24px; }
+            h1 { font-size: 2.2rem; }
+            .badge { padding: 7px 18px; font-size: 0.85rem; }
+            .story-text { font-size: 0.92rem; width: calc(100% - 48px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="section">
+        <div class="icon-top">💙🎂💋💙</div>
+        <h1>Happy Birthday, Mykey</h1>
+        <div style="text-align: center;">
+            <span class="subtitle">✨ Miki — my forever love ✨</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="story-block">
+            <span class="story-emoji">📖</span>
+            <span class="story-text"><strong>Our beginning:</strong> Facebook gave me the man of my life. Forever grateful for that day. 💕</span>
+        </div>
+        <div class="story-block">
+            <span class="story-emoji">💪</span>
+            <span class="story-text"><strong>6 years together</strong> · <strong>2 years officially in love</strong> — we've had quarrels, but we never gave up. That's real love.</span>
+        </div>
+        <div class="story-block">
+            <span class="story-emoji">🏡</span>
+            <span class="story-text">You're my home, my calm, my favorite hello and hardest goodbye. I still love you so much.</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="love-section">
+            <div class="love-title">
+                💙 What I adore about you 💙
+            </div>
+            <div class="badge-container">
+                <div class="badge">💪 Your posture</div>
+                <div class="badge">✨ Your personality</div>
+                <div class="badge">👄 Your lips (so much!)</div>
+            </div>
+            <div style="font-size: 0.85rem; color: #7fa2c4; margin-top: 8px;">
+                and a thousand little things that make you, YOU 💙
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <button class="surprise-btn" id="surpriseBtn">🎁 Open your surprise 🎁</button>
+        <div id="surpriseMessage" class="surprise-message">
+            💌 <strong>Mykey, my love…</strong><br><br>
+            The real gift is how much I LOVE YOU.<br>
+            Every fight taught us something real.<br>
+            Every kiss still gives me butterflies.<br>
+            You are the man of my life.<br>
+            I'd choose you again — on Facebook, in real life, in every universe.<br><br>
+            ❤️ Yours forever ❤️
+        </div>
+    </div>
+
+    <footer class="section">
+        Made with my whole heart — from your girl 💙<br>
+    </footer>
+</div>
+
+<script>
+    // Create floating elements (clouds, hearts, stars)
+    function createFloating() {
+        const elements = ['💙', '☁️', '✨', '💕', '🌊', '💎', '🦋'];
+        const floating = document.createElement('div');
+        floating.classList.add('floating');
+        floating.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+        floating.style.left = Math.random() * 100 + '%';
+        floating.style.fontSize = 14 + Math.random() * 22 + 'px';
+        floating.style.opacity = 0.4 + Math.random() * 0.4;
+        document.body.appendChild(floating);
+        setTimeout(() => { floating.remove(); }, 5000);
+    }
+
+    let floatInterval = setInterval(createFloating, 700);
+
+    // Surprise button logic
+    const btn = document.getElementById('surpriseBtn');
+    const surpriseDiv = document.getElementById('surpriseMessage');
+
+    btn.addEventListener('click', () => {
+        surpriseDiv.classList.add('show');
+        btn.innerText = '💙 You have all my love 💙';
+        btn.disabled = true;
+        btn.style.animation = 'none';
+        
+        // Burst of floating elements
+        for (let i = 0; i < 30; i++) {
+            setTimeout(() => createFloating(), i * 50);
+        }
+        
+        // Soft background color transition
+        document.body.style.background = "linear-gradient(145deg, #cfe3ff 0%, #dceaff 50%, #c5ddff 100%)";
+    });
+</script>
+</body>
+</html>
